@@ -1,39 +1,20 @@
 import "./App.css";
 import * as React from "react";
-import Paper from "@mui/material/Paper";
-import { ViewState } from "@devexpress/dx-react-scheduler";
-import {
-  Scheduler,
-  MonthView,
-  Appointments,
-} from "@devexpress/dx-react-scheduler-material-ui";
+import { Landing } from "./landing/Landing";
+import { styled } from "styled-components";
 
-function App() {
-  const currentDate = new Date();
-  const schedulerData = [
-    {
-      startDate: "2023-08-01T09:45",
-      endDate: "2023-08-02T11:00",
-      title: "Andrew and Francesco at Beyonce",
-    },
-    {
-      startDate: "2018-11-01T12:00",
-      endDate: "2018-11-01T13:30",
-      title: "Go to a gym",
-    },
-  ];
+const Container = styled.div`
+  background-color: #272829;
+  height: 100vh;
+  width: 100vw;
+`;
 
+const App = () => {
   return (
-    <div className="App">
-      <Paper>
-        <Scheduler data={schedulerData}>
-          <ViewState currentDate={currentDate} />
-          <MonthView />
-          <Appointments />
-        </Scheduler>
-      </Paper>
-    </div>
+    <Container className="App">
+      <Landing />
+    </Container>
   );
-}
+};
 
 export default App;
